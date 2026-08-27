@@ -1,3 +1,4 @@
 scrapegraphai
+langchain-community==0.4.0
 playwright
 python-dotenv

@@ -28,3 +28,10 @@ python smart_scraper_example.py
 This runs `SmartScraperGraph`, which fetches a page, renders it with Playwright, and
 asks the configured LLM to extract structured data from it based on a natural-language
 prompt.
+
+## Known issue
+
+`scrapegraphai` still imports `ChatOllama` from `langchain_community.chat_models`,
+which was removed in `langchain-community` 0.4.1+ (it now lives only in
+`langchain-ollama`). `requirements.txt` pins `langchain-community==0.4.0` to avoid
+this `ImportError`; if you bump it, re-check that the import still works.
